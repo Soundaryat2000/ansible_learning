@@ -1,0 +1,20 @@
+creating user:
+
+Syntax:  useradd username
+
+-m - creates the home directory
+-g specify the primary group where it needs to be add
+-G list of supplementary groups to add
+-e expiraydate(YYYY-MM-DD)
+-d path for the home directory
+-s specify the shell path
+-u UID
+-c comment
+
+need to create a non-interactive user which does not allow the user to login
+
+sudo useradd -s /sbin/nologin username
+
+If we want to give a password for both ssh login and sudo means use below command
+
+ssh user@serverip "echo 'password' | sudo -S useradd username"
